@@ -1,38 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
 
-    <title>Text Submission Page</title>
+    <title>Sparx Bookmark Check DATA</title>
     <style>
         /* Some basic styling for the page */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
         }
         #container {
             max-width: 600px;
             margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 0px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button.download {
+            background-color: #28a745;
+        }
+        button.download:hover {
+            background-color: #1e7e34;
+        }
+        #tableContainer {
+            margin-top: 20px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
         }
         table, th, td {
-            border: 1px solid #ddd;
+            border: 1px solid #ffffff;
             padding: 8px;
         }
         th {
             background-color: #f2f2f2;
         }
+        span#currentSection {
+            color: #333;
+            font-weight: bold;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
     <div id="container">
-        <h1>Text Submission Page</h1>
-        <p>Enter text in the box below and click "Submit" or press Enter to save it:</p>
+        <h1>Sparx BookWork Code Helper</h1>
+        <p>Enter text in the box below and click "Submit" or press Enter to save it, once your done click download pdf so you can recall it later:
+        </p>
         <form id="textForm">
             <input type="text" id="textInput" placeholder="Enter your text here" required>
             <br><br>
@@ -43,7 +90,7 @@
         </div>
         <button type="button" onclick="nextSection()">Next Section</button>
         <button type="button" onclick="backSection()">Back Section</button>
-        <button type="button" onclick="downloadPDF()">Download PDF</button>
+        <button type="button" class="download" onclick="downloadPDF()">Download PDF - For Later</button>
         <p></p>
         <span id="currentSection">Current Section: 1A</span>
     </div>
@@ -119,7 +166,7 @@
             // Define the PDF document definition
             var docDefinition = {
                 content: [
-                    { text: 'Text Submission Page - Table', style: 'header' },
+                    { text: 'Sparx Bookwork Code - TABLE', style: 'header' },
                     {  },
                     {
                         table: {
@@ -144,7 +191,7 @@
             };
 
             // Generate and download the PDF
-            pdfMake.createPdf(docDefinition).download('text_submission_table.pdf');
+            pdfMake.createPdf(docDefinition).download('SPARX_SUBMISSIONSPAGEBGKJUY.pdf');
         }
 
         // Prevent form submission and page reload on Enter key press

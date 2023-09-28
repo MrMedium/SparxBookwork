@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
 
@@ -119,7 +120,7 @@
             var docDefinition = {
                 content: [
                     { text: 'Text Submission Page - Table', style: 'header' },
-                    { text: 'Current Section: ' + currentNumber + String.fromCharCode(64 + sectionCounter), style: 'subheader' },
+                    {  },
                     {
                         table: {
                             headerRows: 1,
@@ -145,6 +146,20 @@
             // Generate and download the PDF
             pdfMake.createPdf(docDefinition).download('text_submission_table.pdf');
         }
+
+        // Prevent form submission and page reload on Enter key press
+        document.getElementById("textForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            saveText();
+        });
+
+        // Handle Enter key press inside the input field
+        document.getElementById("textInput").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Prevent form submission
+                saveText(); // Call the saveText function
+            }
+        });
     </script>
 
     <table>

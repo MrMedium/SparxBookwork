@@ -1,87 +1,122 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
-
     <title>Sparx Bookmark Check DATA</title>
     <style>
         /* Some basic styling for the page */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f0f0f0;
+            background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-light-blue-blackboard-geometry-course-education-math-formula-background-picture-image_1457829.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             margin: 0;
             padding: 0;
         }
         #container {
             max-width: 600px;
             margin: 0 auto;
-            background-color: #ffffff;
+            background: rgba(255, 255, 255, 0.2); /* Apply a glassmorphism background */
             padding: 30px;
-            border-radius: 0px;
+            border-radius: 0px; /* Add border-radius for a rounded container */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px); /* Add a backdrop-filter to create the frosted glass effect */
         }
         h1 {
-            color: #333;
+            color: #000000;
+            font-weight: bold;
         }
+
+        h6 {
+            color: #393939;
+        }
+        
         p {
-            color: #666;
+            color: #000000;
+            font-weight: bold;
         }
         input[type="text"] {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 3px solid #000000;
+            background: rgba(251, 251, 251, 0.2);
             border-radius: 5px;
             margin-bottom: 10px;
         }
         button {
-            background-color: #007BFF;
+            background-color: #344646;
             color: #fff;
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 1s ease;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #6106fe;
         }
         button.download {
-            background-color: #28a745;
+            background-color: #51646a;
         }
         button.download:hover {
-            background-color: #1e7e34;
+            background-color: #6106fe;
         }
         #tableContainer {
             margin-top: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            margin: 0 auto;
+            max-width: 660px;
+            padding: 30px;
         }
         table, th, td {
-            border: 1px solid #ffffff;
+            background: rgba(255, 255, 255, 0.2);
             padding: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(px);
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #4140402d;
         }
         span#currentSection {
-            color: #333;
+            font-weight: bold;
+            color: #000000;
             font-weight: bold;
             font-size: 18px;
         }
+        ::placeholder {
+            color: rgb(0, 0, 0);
+            opacity: 1; 
+            font-weight: bold;
+                        }
+
+        ::-ms-input-placeholder {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+                        }
     </style>
 </head>
 <body>
     <div id="container">
-        <h1>Sparx BookWork Code Helper</h1>
-        <p>Enter text in the box below and click "Submit" or press Enter to save it, once your done click download pdf so you can recall it later:
+        <h1>Sparx Bookmark Code Helper
+        </h1>
+        <p>Enter text in the box below and click "Submit" or press Enter to save it, once you're done click download pdf so you can recall it later:
         </p>
+        
         <form id="textForm">
-            <input type="text" id="textInput" placeholder="Enter your text here" required>
+            <input type="text" id="textInput" placeholder="Enter Bookwork Code Here" required>
             <br><br>
             <button type="button" onclick="saveText()">Submit</button>
         </form>
